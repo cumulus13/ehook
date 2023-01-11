@@ -43,7 +43,7 @@ class ehook:#(object):
         
         syslog_server = re.split("\n|\t|,", self.CONFIG.get_config('syslog', 'host')) or kwargs.get('syslog_server')
         syslog_server = [i.strip() for i in syslog_server]
-        debug(syslog_server = syslog_server, debug = 1)
+        debug(syslog_server = syslog_server)
         if isinstance(syslog_server, list):
             for i in syslog_server:
                 self.debug_server_client(data, data_color, i.split(":")[0])
